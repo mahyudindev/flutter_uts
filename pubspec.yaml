@@ -31,5 +31,5 @@ flutter:
 
   assets:
     - assets/animation/animation.json
-    - assets/animation/login.json
     - assets/icon/icon.png
+    - assets/images/unival.png

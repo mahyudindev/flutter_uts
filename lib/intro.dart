@@ -11,7 +11,6 @@ class _IntroPageState extends State<IntroPage> {
   @override
   void initState() {
     super.initState();
-    // Delay selama 5 detik sebelum navigasi ke halaman login
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
@@ -23,14 +22,18 @@ class _IntroPageState extends State<IntroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlueAccent,
+      ),
       body: Center(
         child: Lottie.asset(
-          'assets/loading_animation.json', // Ganti dengan path animasi Lottie
-          width: 200,
-          height: 200,
+          'assets/animation/animation.json',
+          width: 300,
+          height: 300,
           fit: BoxFit.cover,
         ),
       ),
     );
   }
 }
+

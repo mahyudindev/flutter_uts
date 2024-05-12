@@ -27,35 +27,17 @@ class DashboardPage extends StatelessWidget {
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-                  (context, index) {
+              (context, index) {
                 return Container(
                   height: 200,
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  decoration: BoxDecoration(
-                    color: Colors.blue.withOpacity(0.8),
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Item ${index + 1}",
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  child: Image.network(
+                    'https://source.unsplash.com/random',
+                    fit: BoxFit.cover,
                   ),
                 );
               },
-              childCount: 10,
+              childCount: 5,
             ),
           ),
         ],
