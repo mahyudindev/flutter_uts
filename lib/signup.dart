@@ -80,7 +80,7 @@ class SignUpPage extends StatelessWidget {
                     // Redirect ke halaman Dashboard
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => DashboardPage()),
+                      MaterialPageRoute(builder: (context) => LoginPage()),
                     );
                   },
                   child: const Text('Save'),
