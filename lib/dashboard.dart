@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
@@ -8,20 +9,23 @@ class DashboardPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 200,
-            floating: true,
             pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text('Dashboard'),
-              background: Image.network(
-                'https://source.unsplash.com/random',
-                fit: BoxFit.cover,
-              ),
-            ),
+            floating: true,
+            snap: true,
+            expandedHeight: 200,
+            leading: Icon(Icons.home, size: 30),
+            title: Text(style: TextStyle(fontSize: 30), 'Dashboard'),
+            centerTitle: true,
             actions: [
               IconButton(
-                icon: Icon(Icons.settings),
-                onPressed: () {},
+                iconSize: 30,
+                icon: Icon(Icons.logout_outlined),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
               ),
             ],
           ),
@@ -30,14 +34,25 @@ class DashboardPage extends StatelessWidget {
               (context, index) {
                 return Container(
                   height: 200,
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  child: Image.network(
-                    'https://source.unsplash.com/random',
-                    fit: BoxFit.cover,
+                  color: Color.fromARGB(
+                    255,
+                    Random().nextInt(256),
+                    Random().nextInt(256),
+                    Random().nextInt(256),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "HALO ${index + 1}",
+                      style: TextStyle(
+                        fontSize: 50,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 );
               },
-              childCount: 5,
+              childCount: 100,
             ),
           ),
         ],
